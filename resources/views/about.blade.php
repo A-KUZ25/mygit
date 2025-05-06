@@ -1,4 +1,4 @@
-<table width="30%" border="0">
+<table width="100%" border="0">
     <tbody>
     <tr>
         <td ><b> Параметр</b></td>
@@ -7,32 +7,31 @@
     <tr>
         <td >
             <p>Диапазон показаний, % масс</p>
-            <p>CS10: углерод<span ><br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;сера</p>
+            <p>CS10: углерод<span ><br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;сера</p>
             <p></p>
-            <p>CS20: углерод<span ><br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;сера</p>
+            <p>CS20: углерод<span ><br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;сера</p>
             <p></p>
-            <p>CS30: углерод<span ><br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;сера</p>
+            <p>CS30: углерод<span ><br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;сера</p>
         </td>
         <td >
             <p><br /></p>
             <p>от 0 до 100<span ><br /></span>-</p>
             <p></p>
-            <p>от 0,005 до 35,0<span ><br /></span>от 0,001 до 40,0</p>
+            <p>от 0 до 100<span ><br /></span>от 0 до 100</p>
             <p></p>
-            <p>от 0,001 до 35,0<span ><br /></span>от 0,001 до 0,5</p>
+            <p>от 0 до 100<span ><br /></span>от 0 до 0,5</p>
         </td>
     </tr>
-    <tr> <td><span ><br /></span></td></tr>
     <tr>
         <td >
             <p>Диапазон измерения, % масс</p>
-            <p>CS10: углерод<span ><br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;сера</p>
+            <p>CS10: углерод<span ><br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;сера</p>
             <p></p>
-            <p>CS20: углерод<span ><br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;сера</p>
+            <p>CS20: углерод<span ><br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;сера</p>
             <p></p>
-            <p>CS30: углерод<span ><br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;сера</p>
+            <p>CS30: углерод<span ><br /></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;сера</p>
         </td>
-        <td >
+        <td>
             <p><br /></p>
             <p>от 0,001 до 35,0<span ><br /></span>-</p>
             <p></p>
@@ -41,7 +40,6 @@
             <p>от 0,001 до 35,0<span ><br /></span>от 0,001 до 0,5</p>
         </td>
     </tr>
-    <tr> <td><span ><br /></span></td></tr>
     <tr>
         <td >
             <p>Предел допускаемого<span ><br /></span>
@@ -63,7 +61,6 @@
             <p>6</p>
         </td>
     </tr>
-    <tr> <td><span ><br /></span></td></tr>
     <tr>
         <td >
             <p>Предел обнаружения<span ><br /></span>
@@ -80,7 +77,26 @@
 
         </td>
     </tr>
-    <tr> <td><span ><br /></span></td></tr>
+    <tr>
+        <td >
+            <p>Пределы допускаемой<span ><br /></span>
+                относительной погрешности<span ><br /></span>
+                измерений массовой доли<span ><br /></span>
+                углерода, %:</p>
+            <p></p>
+            <p>- от 0,001 % до 0,05 % включ.</p>
+            <p>- от 0,005 % до 0,5 % включ.</p>
+            <p>- св. 0,5 % до 5,0 % включ.</p>
+            <p>- св. 5 % до 35,0 % включ.</p>
+        </td>
+        <td >
+            <p><br /><br /><br /><br /></p>
+            <p>± 25,0</p>
+            <p>± 10,0</p>
+            <p>± 6,0</p>
+            <p>± 3,0</p>
+        </td>
+    </tr>
     <tr>
         <td >
             <p>Пределы допускаемой<span ><br /></span>
@@ -89,18 +105,16 @@
                 серы, %:</p>
             <p></p>
             <p>- от 0,001 % до 0,02 % включ.</p>
-            <p>- от 0,001 % до 0,02 % включ.</p>
+            <p>- от 0,002 % до 0,5 % включ.</p>
             <p>- св. 0,5 % до 40,0 % включ.</p>
         </td>
         <td >
             <p><br /><br /><br /><br /></p>
-            <p></p>
             <p>± 25,0</p>
             <p>± 10,0</p>
             <p>± 3,0</p>
         </td>
     </tr>
-    <tr> <td><span ><br /></span></td></tr>
     <tr>
         <td>
             <p>Газ носитель</p>
@@ -109,7 +123,6 @@
             <p>Кислород 99,7%</p>
         </td>
     </tr>
-    <tr> <td><span ><br /></span></td></tr>
     <tr>
         <td >
             <p>Расход газа-носителя в <span ><br /></span>
@@ -120,7 +133,6 @@
             <p>3,0</p>
         </td>
     </tr>
-    <tr> <td><span ><br /></span></td></tr>
     <tr>
         <td >
             <p>Масса анализируемого <span ><br /></span>
@@ -130,7 +142,6 @@
             <p>20 - 2000</p>
         </td>
     </tr>
-    <tr> <td><span ><br /></span></td></tr>
     <tr>
         <td >
             <p>Время анализа, с</p>
@@ -139,16 +150,14 @@
             <p>60 - 180</p>
         </td>
     </tr>
-    <tr> <td><span ><br /></span></td></tr>
     <tr>
         <td >
             <p>Температура анализа, ° С</p>
         </td>
         <td >
-            <p>900 -1400</p>
+            <p>900 - 1400</p>
         </td>
     </tr>
-    <tr> <td><span ><br /></span></td></tr>
     <tr>
         <td >
             <p>Потребляемая мощность, <span ><br /></span>
@@ -162,7 +171,6 @@
             <p>0,3</p>
         </td>
     </tr>
-    <tr> <td><span ><br /></span></td></tr>
     <tr>
         <td >
             <p>Габаритные размеры, <span ><br /></span>мм ( ДхШхВ )</p>
@@ -171,7 +179,6 @@
             <p>720х600х770</p>
         </td>
     </tr>
-    <tr> <td><span ><br /></span></td></tr>
     <tr>
         <td >
             <p>Масса , кг (не более)</p>
@@ -180,7 +187,6 @@
             <p>70</p>
         </td>
     </tr>
-    <tr> <td><span ><br /></span></td></tr>
     <tr>
         <td >
             <p>Рабочие условия <br/> анализатора : <br/>
@@ -190,7 +196,6 @@
         </td>
         <td >
             <p> <br/> <br/> 15 до 30</p>
-            <p><span ><br /></span></p>
             <p>от 30 до 80</p>
         </td>
     </tr>
