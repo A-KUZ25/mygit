@@ -3,13 +3,13 @@
     <div>
         <div class="mb-3">
                 <div class="mb-2">ID: {{$post->id}} <br> {{$post->title}}</div>
-                <div class="mb-2">Категория: {{$category->title}}</div>
+                <div class="mb-2">Категория: {{$category->name}}</div>
                 <div>Содержание:</div>
                 <div class="mb-4">{{$post->content}}</div>
                 <div class="mb-2">Теги:</div>
             @if(count($postTags) != 0)
             @foreach($postTags as $postTag)
-                <button type="button" class="btn btn-secondary mb-4" >{{$postTag->title}}</button>
+                <button type="button" class="btn btn-secondary mb-4" >{{$postTag->name}}</button>
             @endforeach
 
             @else

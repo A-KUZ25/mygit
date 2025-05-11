@@ -14,9 +14,12 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('title');
-            $table->string('title');
+            $table->string('content');
+            $table->string('image');
             $table->timestamps();
+            $table->softDeletes();
+
+            $table->unsignedBigInteger('category_id');
         });
     }
 

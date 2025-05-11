@@ -19,7 +19,7 @@
                     @foreach($categories as $category)
                         <option
                             {{old('category_id') != null && ($category->id == old('category_id')) ? 'selected' : ''}}
-                            value="{{$category->id}}">{{$category->title}}</option>
+                            value="{{$category->id}}">{{$category->name}}</option>
                     @endforeach
                 </select>
             </div>
@@ -32,18 +32,18 @@
                 <p class="text-danger">Введите текст</p>
                 @enderror
             </div>
-            {{--            <div class="mb-3">--}}
-            {{--                <label for="image" class="form-label">Превью</label>--}}
-            {{--                <input type="text" class="form-control" id="image" name="image"--}}
-            {{--                       placeholder="Перенесите файл или вставьте URL">--}}
-            {{--            </div>--}}
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Превью</label>
+                            <input type="text" class="form-control" id="image" name="image"
+                                   placeholder="Перенесите файл или вставьте URL">
+                        </div>
             <label for="tags" class="form-label">Теги</label><br>
             <div class="mb-5">
                 @foreach($tags as $tag)
                     <input type="checkbox" class="btn-check" id="{{$tag->id}}" name="tags[]" autocomplete="off"
                            value="{{$tag->id}}"
                         {{old('tags') && in_array($tag->id, old('tags')) ? 'checked' : ''}}>
-                    <label class="btn btn-outline-secondary" for="{{$tag->id}}">{{$tag->title}}</label>
+                    <label class="btn btn-outline-secondary" for="{{$tag->id}}">{{$tag->name}}</label>
                 @endforeach
             </div>
             <br>
