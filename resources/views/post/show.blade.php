@@ -17,7 +17,7 @@
             @endif
         </div>
         <div >
-            <form action="{{route('post.delete', $post->id)}}" method="post">
+            <form action="{{route('post.destroy', $post->id)}}" method="post">
                 @csrf
                 @method('delete')
             <a href="{{route('post.index')}}" class="btn btn-outline-secondary" tabindex="-1" role="button"

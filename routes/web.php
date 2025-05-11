@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PostsController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,23 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PostsController::class, 'index'])->name('post.index');
+Route::get('/', [PostController::class, 'index'])->name('post.index');
 
 //Роуты модели POST
-Route::get('/post', [PostsController::class, 'index'])->name('post.index');
-Route::get('/post/create', [PostsController::class, 'create'])->name('post.create');
-Route::get('/post/{post}', [PostsController::class, 'show'])->name('post.show');
-Route::get('/post/{post}/edit', [PostsController::class, 'edit'])->name('post.edit');
-Route::patch('/post/{post}', [PostsController::class, 'update'])->name('post.update');
-Route::delete('/post/{post}', [PostsController::class, 'destroy'])->name('post.delete');
-Route::post('/post', [PostsController::class, 'store'])->name('post.store');
+Route::resource('post', PostController::class);
 
-//Роуты модели ABOUT
-Route::get('/about', [\App\Http\Controllers\AboutController::class, 'index'])->name('about.index');
 
-//Роуты модели MAIN
-Route::get('/main', [\App\Http\Controllers\MainController::class, 'index'])->name('main.index');
-
-//Роуты модели CONTACT
-Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'index'])->name('contact.index');
+//Route::get('/post', [PostController::class, 'index'])->name('post.index');
+//Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
+//Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
+//Route::get('/post/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
+//Route::patch('/post/{post}', [PostController::class, 'update'])->name('post.update');
+//Route::delete('/post/{post}', [PostController::class, 'destroy'])->name('post.delete');
+//Route::post('/post', [PostController::class, 'store'])->name('post.store');
 
