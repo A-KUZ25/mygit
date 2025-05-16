@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostRequest;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
 
-class PostController extends Controller
+class PostController extends BaseController
 {
     public function index()
     {
@@ -22,24 +23,11 @@ class PostController extends Controller
         return view('post.create', compact('categories', 'tags'));
     }
 
-    public function store()
+    public function store(PostRequest $request)
     {
-        $data = request()->validate([
-            'title' => 'string',
-            'category_id' => 'int',
-            'content' => 'string',
-            'image' => 'string',
-            'tags' => ''
-        ]);
-        if (isset($data['tags'])) {
-            $tags = $data['tags'];
-            unset($data['tags']);
-            $post = Post::create($data);
-            $post->tags()->sync($tags);
-        }
-        else {
-            Post::create($data);
-        }
+        $data = $request->validated();
+
+        $this->service->store($data);
 
         return redirect()->route('post.index');
     }
@@ -59,22 +47,11 @@ class PostController extends Controller
         return view('post.edit', compact('post', 'categories', 'tags', 'postTags'));
     }
 
-    public function update(Post $post)
+    public function update(Post $post, PostRequest $request)
     {
-        $tags = [];
-        $data = request()->validate([
-            'title' => 'string',
-            'content' => 'string',
-            'image' => 'string',
-            'category_id' => 'int',
-            'tags' => ''
-        ]);
-        if (isset($data['tags'])) {
-            $tags = $data['tags'];
-            unset($data['tags']);
-        }
-        $post->update($data);
-        $post->tags()->sync($tags);
+        $data = $request->validated();
+
+        $this->service->update($data, $post);
 
         return redirect()->route('post.show', $post->id);
 

@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +19,6 @@ Route::get('/', [PostController::class, 'index'])->name('post.index');
 //Роуты модели POST
 Route::resource('post', PostController::class);
 
-Route::get('/test', [TestController::class, 'index'])->name('Test.index');
 //Route::get('/post', [PostController::class, 'index'])->name('post.index');
 //Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
 //Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
