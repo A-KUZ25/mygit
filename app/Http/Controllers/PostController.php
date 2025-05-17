@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FilterRequest;
 use App\Http\Requests\PostRequest;
 use App\Models\Category;
 use App\Models\Post;
@@ -9,9 +10,22 @@ use App\Models\Tag;
 
 class PostController extends BaseController
 {
-    public function index()
+    public function index(FilterRequest $request)
     {
-        $posts = Post::all();
+        $data = $request->validated();
+
+        $query = Post::query();
+
+        if (isset($data['category_id'])) {
+            $query->where('category_id', $data['category_id']);
+        }
+
+        if (isset($data['title'])){
+            $query->where('title', 'like', "%{$data['title']}%");
+        }
+        $posts = $query->get();
+       dd($posts);
+        $posts = Post::paginate(12);
         $categories = Category::all();
         return view('post.index', compact('posts', 'categories'));
     }
