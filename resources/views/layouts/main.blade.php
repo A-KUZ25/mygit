@@ -14,7 +14,7 @@
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{route('main.index')}}">
                 Сайт
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

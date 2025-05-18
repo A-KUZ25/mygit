@@ -14,20 +14,9 @@ class PostController extends BaseController
     {
         $data = $request->validated();
 
-        $query = Post::query();
+        $posts =  $this->service->index($data);
 
-        if (isset($data['category_id'])) {
-            $query->where('category_id', $data['category_id']);
-        }
-
-        if (isset($data['title'])){
-            $query->where('title', 'like', "%{$data['title']}%");
-        }
-        $posts = $query->get();
-       dd($posts);
-        $posts = Post::paginate(12);
-        $categories = Category::all();
-        return view('post.index', compact('posts', 'categories'));
+        return view('post.index', compact('posts'));
     }
 
     public function create()

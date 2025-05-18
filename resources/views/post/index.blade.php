@@ -18,7 +18,7 @@
                     </div>
                 @endforeach
                 <div>
-                    {{$posts->links()}}
+                    {{$posts->withQueryString()->links()}}
                 </div>
             </div>
             <a href="{{route('post.create')}}" class="btn btn-outline-success mt-3" tabindex="-1" role="button"

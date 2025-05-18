@@ -2,10 +2,20 @@
 
 namespace App\Services\Post;
 
+use App\Http\Filter\PostFilter;
 use App\Models\Post;
 
 class Service
 {
+    public function index($data)
+    {
+        $filter = app()->make(PostFilter::class, ['queryParams' => array_filter($data)]);
+
+        $filteredPost = Post::query()->filter($filter)->paginate(12);
+
+        return $filteredPost;
+    }
+
     public function store($data)
     {
         if (isset($data['tags'])) {
