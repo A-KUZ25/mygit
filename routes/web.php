@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'index'])->name('main.index');
 
+//Route::get('/admin', [AdminController::class, 'admin'])->name('admin.post');
+
 //Роуты модели POST
 Route::resource('post', PostController::class);
 

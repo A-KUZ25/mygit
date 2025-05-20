@@ -1,11 +1,11 @@
- @extends('layouts.main')
+@extends('layouts.main')
 @section('content')
     <div>
         <div>
             <div class="row">
                 @foreach($posts as $post)
                     <div class="card m-3" style="width: 18rem;">
-{{--                        <img src="..." class="card-img-top" alt="...">--}}
+                        {{--                        <img src="..." class="card-img-top" alt="...">--}}
                         <div class="card-body">
                             <h5 class="card-title">{{$post->title}}</h5>
                             <h6 class="card-subtitle mb-2 text-body-secondary">

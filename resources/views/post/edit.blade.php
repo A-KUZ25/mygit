@@ -14,8 +14,8 @@
                 <select class="form-select" aria-label="" name="category_id" id="category_id" required="true">
                     @foreach($categories as $category)
                         <option
-                            {{ $post->category_id == $category->id ? 'selected' : ''}}
-                            value="{{$category->id}}">{{$category->name}}
+                                {{ $post->category_id == $category->id ? 'selected' : ''}}
+                                value="{{$category->id}}">{{$category->name}}
                         </option>
                     @endforeach
                 </select>
@@ -33,10 +33,11 @@
             </div>
             <div class="mb-5">
                 @foreach($tags as $tag)
-                    <input type="checkbox" class="btn-check" id="{{$tag->id}}"  name="tags[]" autocomplete="off" value="{{$tag->id}}"
+                    <input type="checkbox" class="btn-check" id="{{$tag->id}}" name="tags[]" autocomplete="off"
+                           value="{{$tag->id}}"
                     @foreach($postTags as $postTag)
                         {{ $postTag->id == $tag->id ? 'checked' : ''}}
-                        @endforeach
+                            @endforeach
                     >
                     <label class="btn btn-outline-secondary" for="{{$tag->id}}">{{$tag->name}}</label>
                 @endforeach
