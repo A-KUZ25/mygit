@@ -40,7 +40,8 @@
                         </ul>
                     </li>
                 </ul>
-
+                <a href="{{route('admin.index')}}" class="btn btn-outline-success" role="button"
+                   aria-disabled="true">Админ</a>
             </div>
         </div>
     </nav>

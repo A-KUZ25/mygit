@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -17,10 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'index'])->name('main.index');
 
-//Route::get('/admin', [AdminController::class, 'admin'])->name('admin.post');
 
-//Роуты модели POST
+
+Route::resource('admin', AdminController::class);
+
+
 Route::resource('post', PostController::class);
+
 
 
 
