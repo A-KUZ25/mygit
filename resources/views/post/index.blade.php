@@ -21,8 +21,11 @@
                     {{$posts->withQueryString()->links()}}
                 </div>
             </div>
-            <a href="{{route('post.create')}}" class="btn btn-outline-success mt-3" tabindex="-1" role="button"
-               aria-disabled="true">Создать новый</a>
+            @can('view', auth()->user())
+                <a href="{{route('post.create')}}" class="btn btn-outline-success mt-3" tabindex="-1" role="button"
+                   aria-disabled="true">Создать новый</a>
+            @endcan
+
         </div>
     </div>
 @endsection
