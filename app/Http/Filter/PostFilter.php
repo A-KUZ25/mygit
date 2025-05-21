@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Builder;
 class PostFilter extends AbstractFilter
 {
     public const TITLE = 'title';
-    public const CATEGORY_ID = 'category_id';
     public const CONTENT = 'content';
+    public const CATEGORY_ID = 'category_id';
 
     protected function getCallbacks(): array
     {
@@ -20,15 +20,18 @@ class PostFilter extends AbstractFilter
         ];
     }
 
-    public function title (Builder $builder, $value){
-    $builder->where('title', 'like', "%{$value}%");
+    public function title(Builder $builder, $value)
+    {
+        $builder->where('title', 'like', "%{$value}%");
     }
 
-    public function content (Builder $builder, $value){
+    public function content(Builder $builder, $value)
+    {
         $builder->where('content', 'like', "%{$value}%");
     }
 
-    public function categoryId (Builder $builder, $value){
+    public function categoryId(Builder $builder, $value)
+    {
         $builder->where('category_id', 'like', $value);
     }
 }

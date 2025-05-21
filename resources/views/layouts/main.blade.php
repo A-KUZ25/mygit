@@ -24,24 +24,26 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link active" aria-current="page" href="{{route('main.index')}}">Главная</a>--}}
-{{--                    </li>--}}
+                    {{--                    <li class="nav-item">--}}
+                    {{--                        <a class="nav-link active" aria-current="page" href="{{route('main.index')}}">Главная</a>--}}
+                    {{--                    </li>--}}
                     <li class="nav-item">
                         <a class="nav-link active" href="{{route('post.index')}}">Посты</a>
                     </li>
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link active" href="{{route('about.index')}}">О компании</a>--}}
-{{--                    </li>--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link active" href="{{route('contact.index')}}">Контакты</a>--}}
-{{--                    </li>--}}
+                    {{--                    <li class="nav-item">--}}
+                    {{--                        <a class="nav-link active" href="{{route('about.index')}}">О компании</a>--}}
+                    {{--                    </li>--}}
+                    {{--                    <li class="nav-item">--}}
+                    {{--                        <a class="nav-link active" href="{{route('contact.index')}}">Контакты</a>--}}
+                    {{--                    </li>--}}
 
-                        </ul>
-                    </li>
                 </ul>
-                <a href="{{route('admin.index')}}" class="btn btn-outline-success" role="button"
-                   aria-disabled="true">Админ</a>
+                </li>
+                </ul>
+                @can('view', auth()->user())
+                    <a href="{{route('admin.index')}}" class="btn btn-outline-success" role="button"
+                       aria-disabled="true">Админ</a>
+                @endcan
             </div>
         </div>
     </nav>

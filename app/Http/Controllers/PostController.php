@@ -14,7 +14,9 @@ class PostController extends BaseController
     {
         $data = $request->validated();
 
-        $posts =  $this->service->index($data);
+        $postOnPage = 12;
+
+        $posts = $this->service->index($data, $postOnPage);
 
         return view('post.index', compact('posts'));
     }

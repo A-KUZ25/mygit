@@ -7,11 +7,11 @@ use App\Models\Post;
 
 class Service
 {
-    public function index($data)
+    public function index($data, $postOnPage)
     {
         $filter = app()->make(PostFilter::class, ['queryParams' => array_filter($data)]);
 
-        $filteredPost = Post::query()->filter($filter)->paginate(12);
+        $filteredPost = Post::query()->filter($filter)->paginate($postOnPage);
 
         return $filteredPost;
     }
