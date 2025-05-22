@@ -20,11 +20,14 @@
             <form action="{{route('post.destroy', $post->id)}}" method="post">
                 @csrf
                 @method('delete')
-                <a href="{{route('post.index')}}" class="btn btn-outline-secondary" tabindex="-1" role="button"
+                <a href="{{url()->previous()}}" class="btn btn-outline-secondary" tabindex="-1" role="button"
                    aria-disabled="true">Назад</a>
                 <button type="submit" class="btn btn-danger">Удалить</button>
-                <a href="{{route('post.edit', $post->id)}}" class="btn btn-outline-success" tabindex="-1" role="button"
-                   aria-disabled="true">Редактировать</a>
+                @can('view', auth()->user())
+                    <a href="{{route('post.edit', $post->id)}}" class="btn btn-outline-success" tabindex="-1" role="button"
+                       aria-disabled="true">Редактировать</a>
+                @endcan
+
             </form>
         </div>
     </div>

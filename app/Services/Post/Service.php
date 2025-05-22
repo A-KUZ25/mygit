@@ -7,7 +7,7 @@ use App\Models\Post;
 
 class Service
 {
-    public function index($data, $postOnPage)
+    public function index(array $data, int $postOnPage)
     {
         $filter = app()->make(PostFilter::class, ['queryParams' => array_filter($data)]);
 
@@ -16,20 +16,20 @@ class Service
         return $filteredPost;
     }
 
-    public function store($data)
+    public function store(array $data): Post
     {
         if (isset($data['tags'])) {
             $tags = $data['tags'];
             unset($data['tags']);
             $post = Post::create($data);
             $post->tags()->sync($tags);
+        } else {
+            $post = Post::create($data);
         }
-        else {
-            Post::create($data);
-        }
+        return $post;
     }
 
-    public function update($data, Post $post)
+    public function update(array $data, Post $post)
     {
         $tags = [];
         if (isset($data['tags'])) {

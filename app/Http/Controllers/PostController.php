@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\FilterRequest;
 use App\Http\Requests\PostRequest;
+use App\Http\Resources\PostResource;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
@@ -18,7 +19,8 @@ class PostController extends BaseController
 
         $posts = $this->service->index($data, $postOnPage);
 
-        return view('post.index', compact('posts'));
+        return PostResource::collection($posts);
+        //return view('post.index', compact('posts'));
     }
 
     public function create()
@@ -32,9 +34,11 @@ class PostController extends BaseController
     {
         $data = $request->validated();
 
-        $this->service->store($data);
+        $post = $this->service->store($data);
 
-        return redirect()->route('post.index');
+
+        return new PostResource($post);
+        //return redirect()->route('post.index');
     }
 
     public function show(Post $post)

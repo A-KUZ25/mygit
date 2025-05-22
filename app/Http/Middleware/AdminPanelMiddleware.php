@@ -16,6 +16,7 @@ class AdminPanelMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         $isAuthorized = auth()->user();
+
         if ($isAuthorized) {
 
             $role = auth()->user()->role;
