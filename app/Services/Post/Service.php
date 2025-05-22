@@ -7,11 +7,11 @@ use App\Models\Post;
 
 class Service
 {
-    public function index(array $data, int $postOnPage)
+    public function index(array $data, int $page, int $perPage)
     {
         $filter = app()->make(PostFilter::class, ['queryParams' => array_filter($data)]);
 
-        $filteredPost = Post::query()->filter($filter)->paginate($postOnPage);
+        $filteredPost = Post::query()->filter($filter)->paginate($perPage, ['*'], 'page', $page);
 
         return $filteredPost;
     }
@@ -38,5 +38,7 @@ class Service
         }
         $post->update($data);
         $post->tags()->sync($tags);
+
+        return $post->fresh();
     }
 }

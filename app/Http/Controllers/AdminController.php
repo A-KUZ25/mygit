@@ -16,7 +16,7 @@ class AdminController extends BaseController
 
         $postOnPage = 15;
 
-        $posts =  $this->service->index($data, $postOnPage);
+        $posts =  $this->service->index($data, 1,$postOnPage);
         return view('admin.post', compact('posts'));
     }
 

@@ -15,12 +15,13 @@ class PostController extends BaseController
     {
         $data = $request->validated();
 
-        $postOnPage = 12;
+        $page = $data['page'] ?? 1;
+        $perPage = $data['per_page'] ?? 12;
 
-        $posts = $this->service->index($data, $postOnPage);
+        $posts = $this->service->index($data, $page, $perPage);
 
         return PostResource::collection($posts);
-        //return view('post.index', compact('posts'));
+//        return view('post.index', compact('posts'));
     }
 
     public function create()
@@ -38,7 +39,7 @@ class PostController extends BaseController
 
 
         return new PostResource($post);
-        //return redirect()->route('post.index');
+//        return redirect()->route('post.index');
     }
 
     public function show(Post $post)
@@ -60,8 +61,9 @@ class PostController extends BaseController
     {
         $data = $request->validated();
 
-        $this->service->update($data, $post);
+        $post = $this->service->update($data, $post);
 
+        //return new PostResource($post );
         return redirect()->route('post.show', $post->id);
 
     }

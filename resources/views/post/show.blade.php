@@ -22,8 +22,9 @@
                 @method('delete')
                 <a href="{{url()->previous()}}" class="btn btn-outline-secondary" tabindex="-1" role="button"
                    aria-disabled="true">Назад</a>
-                <button type="submit" class="btn btn-danger">Удалить</button>
+
                 @can('view', auth()->user())
+                    <button type="submit" class="btn btn-danger">Удалить</button>
                     <a href="{{route('post.edit', $post->id)}}" class="btn btn-outline-success" tabindex="-1" role="button"
                        aria-disabled="true">Редактировать</a>
                 @endcan
